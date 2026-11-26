@@ -1,6 +1,6 @@
 /**
-    @authors: Jean Bonadeo Dal Santo
-              Felipe M. Fagundes
+    @authors: Jean Bonadeo Dal Santo, Felipe M. Fagundes (original ED2/POO version)
+          Qt adaptation: Jean Bonadeo Dal Santo
 */
 #include "compacter.hpp"
 

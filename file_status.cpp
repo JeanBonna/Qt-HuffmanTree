@@ -1,6 +1,6 @@
 /**
-    @authors: Jean Bonadeo Dal Santo
-              Felipe M. Fagundes
+    @authors: Jean Bonadeo Dal Santo, Felipe M. Fagundes (original ED2/POO version)
+          Qt adaptation: Jean Bonadeo Dal Santo
 */
 #include "file_status.hpp"
 #include <sys/stat.h>
@@ -12,14 +12,14 @@
     return x.st_size;
 }
 
-[[nodiscard]] int inline HT::file_status::tam_compressed() const noexcept{
-    return comprimido.size() / static_cast<size_t>(8);
-}
+// [[nodiscard]] int inline HT::file_status::tam_compressed() const noexcept{
+//     return comprimido.size() / static_cast<size_t>(8);
+// }
 
-[[nodiscard]] int inline HT::file_status::diff() const noexcept{
-    return abs(tam_origin() - tam_compressed());
-}
+// [[nodiscard]] int inline HT::file_status::diff() const noexcept{
+//     return abs(tam_origin() - tam_compressed());
+// }
 
-[[nodiscard]] double inline HT::file_status::porcent() const noexcept{
-    return (static_cast<double>(diff()) / static_cast<double>(tam_origin()) * 100);
-}
+// [[nodiscard]] double inline HT::file_status::porcent() const noexcept{
+//     return (static_cast<double>(diff()) / static_cast<double>(tam_origin()) * 100);
+// }

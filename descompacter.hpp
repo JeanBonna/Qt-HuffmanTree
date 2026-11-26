@@ -1,14 +1,15 @@
 /**
-    @authors: Jean Bonadeo Dal Santo
-              Felipe M. Fagundes
+    @authors: Jean Bonadeo Dal Santo, Felipe M. Fagundes (original ED2/POO version)
+          Qt adaptation: Jean Bonadeo Dal Santo
 */
+#pragma once
 #include <fstream>
 #include <cwchar>
 #include <iostream>
 #include <cstdlib>
 #include <bitset>
 #include <unordered_map>
-#pragma once
+
 
 
 namespace HT{
@@ -20,7 +21,7 @@ public:
     descompacter(){};
 
     ///Função que pega os arquivos gerados pelo compacter e os descompacta, gerando o arquivo original antes da compactação.
-    void descompactar();
+    int descompactar();
 
 private:
     std::wstring binario;

@@ -1,17 +1,18 @@
 /**
-    @authors: Jean Bonadeo Dal Santo
-              Felipe M. Fagundes
+    @authors: Jean Bonadeo Dal Santo, Felipe M. Fagundes (original ED2/POO version)
+          Qt adaptation: Jean Bonadeo Dal Santo
 */
 #include "descompacter.hpp"
 
 
-    void HT::descompacter::descompactar(){
+    int HT::descompacter::descompactar(){
         system("tar -xf arq_zipado.tar -C /tmp codificacao.txt arq_compactado.txt");
         std::wifstream codigos("/tmp/codificacao.txt");
         if(!codigos){
-            std::wcout << "Falha ao abrir meta dados\n"
-                       << L"é necessario arquivo arq_zipado.tar na pasta de execução do programa\n";
-            exit(1);
+            // std::wcout << "Falha ao abrir meta dados\n"
+            //            << L"é necessario arquivo arq_zipado.tar na pasta de execução do programa\n";
+            // exit(1);
+                return 1;
         }
         
         wchar_t cc;
@@ -29,9 +30,10 @@
 
        std::ifstream entrada("/tmp/arq_compactado.txt", std::ios::binary);
         if(!entrada){
-            std::wcout << "Falha ao abrir arquivo compactado\n"
-                       << L"é necessario arquivo arq_zipado.tar na pasta de execução do programa\n";
-            exit(1);
+            // std::wcout << "Falha ao abrir arquivo compactado\n"
+            //            << L"é necessario arquivo arq_zipado.tar na pasta de execução do programa\n";
+            // exit(1);
+            return 2;
         }
 
         char byte;
@@ -42,6 +44,7 @@
         entrada.close();
 
         save(tam);
+        return 0;
 
     }
 

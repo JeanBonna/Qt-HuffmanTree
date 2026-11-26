@@ -1,6 +1,6 @@
 /**
-    @authors: Jean Bonadeo Dal Santo
-              Felipe M. Fagundes
+    @authors: Jean Bonadeo Dal Santo, Felipe M. Fagundes (original ED2/POO version)
+          Qt adaptation: Jean Bonadeo Dal Santo
 */
 #pragma once
 #include "node.hpp"
@@ -36,10 +36,10 @@ public:
     [[nodiscard]] std::wstring get_decoded_text() noexcept;
 
     /// Só para ver se a tabela está correta (a princípio está)
-    void show_table() const noexcept;
+    void show_table() const noexcept; //Não deve ser utilizado com a GUI
 
     //Função para criar e mostrar o arquivo .dot da árvore de Huffman
-    void show_tree() noexcept;
+    void show_tree() noexcept; // ver como a tela vai desenhar isso
 
 
     [[nodiscard]] std::map<wchar_t, std::wstring> get_huffman_codes() const noexcept{

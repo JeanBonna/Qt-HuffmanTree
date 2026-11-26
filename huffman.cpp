@@ -1,6 +1,6 @@
 /**
-    @authors: Jean Bonadeo Dal Santo
-              Felipe M. Fagundes
+    @authors: Jean Bonadeo Dal Santo, Felipe M. Fagundes (original ED2/POO version)
+          Qt adaptation: Jean Bonadeo Dal Santo
 */
 #include "huffman.hpp"
 
@@ -61,16 +61,16 @@ void HT::huffman::encoder(){
     return ans;
 }
 
-void HT::huffman::show_table() const noexcept{
-    std::wcout << L"-----TABELA-----\n";
-    for(const auto &c: huffman_codes){
-        std::wstring cc(1,c.first);
-        if(cc == L" ") cc = L"SPACE";
-        else if(iscntrl(cc[0])) cc = L"ENDL";
-        std::wcout << cc << L" = " << c.second << std::endl;
-    }
+void HT::huffman::show_table() const noexcept{ //Não deve ser utilizado com a GUI
+    // std::wcout << L"-----TABELA-----\n";
+    // for(const auto &c: huffman_codes){
+    //     std::wstring cc(1,c.first);
+    //     if(cc == L" ") cc = L"SPACE";
+    //     else if(iscntrl(cc[0])) cc = L"ENDL";
+    //     std::wcout << cc << L" = " << c.second << std::endl;
+    // }
         
-    std::wcout << L"----------------\n";
+    // std::wcout << L"----------------\n";
 }
 
 
@@ -126,7 +126,7 @@ void HT::huffman::links(HT::node *node, std::wofstream &dot, std::wstring dir, s
     }
 }
 
-void HT::huffman::show_tree()noexcept{
+void HT::huffman::show_tree()noexcept{ // ver como a tela vai desenhar isso
     std::wofstream dot("show.dot");
     dot << "digraph{\n";
     dot << "\tedge [label=0];\n";
