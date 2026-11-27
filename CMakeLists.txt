@@ -20,6 +20,7 @@ qt_add_executable(Qt-HuffmanTree
     file_status.hpp
     descompacter.hpp
     compacter.hpp
+    aboutdialog.h aboutdialog.cpp aboutdialog.ui
 )
 
 target_link_libraries(Qt-HuffmanTree
