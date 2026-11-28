@@ -21,7 +21,7 @@ public:
     descompacter(){};
 
     ///Função que pega os arquivos gerados pelo compacter e os descompacta, gerando o arquivo original antes da compactação.
-    int descompactar();
+    int descompactar(const std::string &tarPath, const std::string &outPath);
 
 private:
     std::wstring binario;
@@ -30,7 +30,7 @@ private:
     ///Função que casta um byte para uma string de seus bits.
     [[nodiscard]] std::wstring byte_binary_to_string(char byte) const noexcept;
 
-    void save(int tam) noexcept;
+    bool save(int tam, const std::string &outPath) noexcept;
 
 };
 

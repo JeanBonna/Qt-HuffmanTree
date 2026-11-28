@@ -50,6 +50,10 @@ public:
         return root->get_frequency();
     }
 
+    [[nodiscard]] std::map<wchar_t, int> get_char_frequencies() const noexcept{
+        return char_frequencies;
+    }
+
 
 
 
